@@ -1,0 +1,22 @@
+{
+  "rooms": [
+    {
+      "room_type": "Deluxe Suite",
+      "description": "A spacious suite with a king-sized bed and a city view.",
+      "price_per_night": 250.50,
+      "is_available": true
+    },
+    {
+      "room_type": "Standard Queen",
+      "description": "A comfortable room with a queen-sized bed, perfect for solo travelers.",
+      "price_per_night": 120.00,
+      "is_available": true
+    },
+    {
+      "room_type": "Family Room",
+      "description": "Two double beds and a sofa, ideal for families.",
+      "price_per_night": 180.75,
+      "is_available": false
+    }
+  ]
+}
