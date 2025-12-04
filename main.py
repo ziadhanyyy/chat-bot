@@ -22,17 +22,23 @@ NLU_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 NLU_API_KEY = os.getenv("GROQ_API_KEY")
 # ==============================================================================
 
-# --- In-Memory Cache (Populated from JSON at startup) ---
-chatbot_db: Dict[str, List[Dict]] = {"rooms": []}
+# --- In-Memory Cache (UPDATED to store the whole JSON structure) ---
+# Initialize as an empty dictionary to store the full contents of rooms.json
+chatbot_db: Dict[str, Any] = {}
 
-# --- Function to Load Data from JSON into Cache ---
+# --- Function to Load Data from JSON into Cache (UPDATED) ---
 def load_data_into_cache():
     print("Attempting to load data from rooms.json into cache...")
     try:
         with open('rooms.json', 'r', encoding='utf-8') as f:
-            data = json.load(f)
-            chatbot_db["rooms"] = data.get("rooms", [])
-        print(f"Successfully loaded {len(chatbot_db['rooms'])} rooms into cache.")
+            # Load the WHOLE JSON object into chatbot_db
+            global chatbot_db
+            chatbot_db = json.load(f)
+        
+        # Add a print statement to verify contents (assuming 'rooms' key exists)
+        room_count = len(chatbot_db.get("Rooms", []))
+        room_type_count = len(chatbot_db.get("RoomTypes", []))
+        print(f"Successfully loaded {room_count} rooms and {room_type_count} room types into cache.")
     except FileNotFoundError:
         print("WARNING: rooms.json not found. The chatbot will have no room data.")
     except json.JSONDecodeError:
@@ -59,23 +65,25 @@ class UserMessage(BaseModel):
 class BotReply(BaseModel):
     reply: str
 
-# --- Core Logic to Call the AI Model ---
+# --- Core Logic to Call the AI Model (UPDATED) ---
 async def get_ai_response(user_text: str) -> str:
     headers = {
         "Authorization": f"Bearer {NLU_API_KEY}",
         "Content-Type": "application/json"
     }
-    room_context = json.dumps(chatbot_db["rooms"])
+    
+    # Send the ENTIRE chatbot_db dictionary (which holds the whole JSON)
+    full_context = json.dumps(chatbot_db)
 
     payload = {
-        "model": "meta-llama/llama-4-scout-17b-16e-instruct",  # <-- ### THE FIX IS HERE ###
+        "model": "meta-llama/llama-4-scout-17b-16e-instruct",
         "messages": [
             {
                 "role": "system",
                 "content": f"""You are a helpful hotel booking assistant for a hotel named 'Bookify'.
-                Your only job is to answer questions based on the user's query and the provided JSON data about available rooms.
+                Your only job is to answer questions based on the user's query and the provided JSON data about rooms and room types.
                 Keep your answers concise and friendly.
-                Current room data: {room_context}"""
+                Current hotel data: {full_context}"""
             },
             {
                 "role": "user",
