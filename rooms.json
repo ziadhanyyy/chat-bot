@@ -1,22 +1,135 @@
 {
-  "rooms": [
+  "RoomTypes": [
     {
-      "room_type": "Deluxe Suite",
-      "description": "A spacious suite with a king-sized bed and a city view.",
-      "price_per_night": 250.50,
-      "is_available": true
+      "RoomTypeId": 1,
+      "Name": "Standard Single",
+      "Description": "A basic room with one single bed.",
+      "PricePerNight": 75.00,
+      "Capacity": 1
     },
     {
-      "room_type": "Standard Queen",
-      "description": "A comfortable room with a queen-sized bed, perfect for solo travelers.",
-      "price_per_night": 120.00,
-      "is_available": true
+      "RoomTypeId": 2,
+      "Name": "Standard Double",
+      "Description": "A standard room with one double bed.",
+      "PricePerNight": 99.50,
+      "Capacity": 2
     },
     {
-      "room_type": "Family Room",
-      "description": "Two double beds and a sofa, ideal for families.",
-      "price_per_night": 180.75,
-      "is_available": false
+      "RoomTypeId": 3,
+      "Name": "Deluxe Double",
+      "Description": "A larger room with one double bed and enhanced amenities.",
+      "PricePerNight": 120.00,
+      "Capacity": 2
+    },
+    {
+      "RoomTypeId": 4,
+      "Name": "Twin Room",
+      "Description": "A room with two single beds.",
+      "PricePerNight": 105.00,
+      "Capacity": 2
+    },
+    {
+      "RoomTypeId": 5,
+      "Name": "Executive Suite",
+      "Description": "A spacious suite with a separate living area and premium service.",
+      "PricePerNight": 250.00,
+      "Capacity": 2
+    },
+    {
+      "RoomTypeId": 6,
+      "Name": "Family Room (4 Pax)",
+      "Description": "A large room with one double and two single beds.",
+      "PricePerNight": 180.00,
+      "Capacity": 4
+    },
+    {
+      "RoomTypeId": 7,
+      "Name": "Honeymoon Suite",
+      "Description": "A romantic suite with luxurious features and a view.",
+      "PricePerNight": 350.00,
+      "Capacity": 2
+    },
+    {
+      "RoomTypeId": 8,
+      "Name": "Accessible Room",
+      "Description": "Room designed for guests with mobility challenges.",
+      "PricePerNight": 95.00,
+      "Capacity": 2
+    },
+    {
+      "RoomTypeId": 9,
+      "Name": "Penthouse",
+      "Description": "The most exclusive room, top floor, with private terrace.",
+      "PricePerNight": 500.00,
+      "Capacity": 4
+    },
+    {
+      "RoomTypeId": 10,
+      "Name": "Quad Room",
+      "Description": "A room designed to accommodate four guests with four single beds or two bunk beds.",
+      "PricePerNight": 140.00,
+      "Capacity": 4
     }
+  ],
+  "Rooms": [
+    {"RoomId": 1, "RoomNumber": "101", "RoomTypeId": 1, "IsAvailable": true, "ImageURL": "/images/rooms/standard_single_101.jpg"},
+    {"RoomId": 2, "RoomNumber": "102", "RoomTypeId": 1, "IsAvailable": true, "ImageURL": "/images/rooms/standard_single_102.jpg"},
+    {"RoomId": 3, "RoomNumber": "103", "RoomTypeId": 1, "IsAvailable": true, "ImageURL": "/images/rooms/standard_single_103.jpg"},
+    {"RoomId": 4, "RoomNumber": "104", "RoomTypeId": 1, "IsAvailable": false, "ImageURL": "/images/rooms/standard_single_104.jpg"},
+    {"RoomId": 5, "RoomNumber": "105", "RoomTypeId": 1, "IsAvailable": true, "ImageURL": "/images/rooms/standard_single_105.jpg"},
+    
+    {"RoomId": 6, "RoomNumber": "201", "RoomTypeId": 2, "IsAvailable": true, "ImageURL": "/images/rooms/standard_double_201.jpg"},
+    {"RoomId": 7, "RoomNumber": "202", "RoomTypeId": 2, "IsAvailable": true, "ImageURL": "/images/rooms/standard_double_202.jpg"},
+    {"RoomId": 8, "RoomNumber": "203", "RoomTypeId": 2, "IsAvailable": false, "ImageURL": "/images/rooms/standard_double_203.jpg"},
+    {"RoomId": 9, "RoomNumber": "204", "RoomTypeId": 2, "IsAvailable": true, "ImageURL": "/images/rooms/standard_double_204.jpg"},
+    {"RoomId": 10, "RoomNumber": "205", "RoomTypeId": 2, "IsAvailable": true, "ImageURL": "/images/rooms/standard_double_205.jpg"},
+    
+    {"RoomId": 11, "RoomNumber": "301", "RoomTypeId": 3, "IsAvailable": true, "ImageURL": "/images/rooms/deluxe_double_301.jpg"},
+    {"RoomId": 12, "RoomNumber": "302", "RoomTypeId": 3, "IsAvailable": true, "ImageURL": "/images/rooms/deluxe_double_302.jpg"},
+    {"RoomId": 13, "RoomNumber": "303", "RoomTypeId": 3, "IsAvailable": true, "ImageURL": "/images/rooms/deluxe_double_303.jpg"},
+    {"RoomId": 14, "RoomNumber": "304", "RoomTypeId": 3, "IsAvailable": false, "ImageURL": "/images/rooms/deluxe_double_304.jpg"},
+    {"RoomId": 15, "RoomNumber": "305", "RoomTypeId": 3, "IsAvailable": true, "ImageURL": "/images/rooms/deluxe_double_305.jpg"},
+    
+    {"RoomId": 16, "RoomNumber": "401", "RoomTypeId": 4, "IsAvailable": true, "ImageURL": "/images/rooms/twin_room_401.jpg"},
+    {"RoomId": 17, "RoomNumber": "402", "RoomTypeId": 4, "IsAvailable": true, "ImageURL": "/images/rooms/twin_room_402.jpg"},
+    {"RoomId": 18, "RoomNumber": "403", "RoomTypeId": 4, "IsAvailable": true, "ImageURL": "/images/rooms/twin_room_403.jpg"},
+    {"RoomId": 19, "RoomNumber": "404", "RoomTypeId": 4, "IsAvailable": false, "ImageURL": "/images/rooms/twin_room_404.jpg"},
+    {"RoomId": 20, "RoomNumber": "405", "RoomTypeId": 4, "IsAvailable": true, "ImageURL": "/images/rooms/twin_room_405.jpg"},
+    
+    {"RoomId": 21, "RoomNumber": "501", "RoomTypeId": 5, "IsAvailable": true, "ImageURL": "/images/rooms/executive_suite_501.jpg"},
+    {"RoomId": 22, "RoomNumber": "502", "RoomTypeId": 5, "IsAvailable": true, "ImageURL": "/images/rooms/executive_suite_502.jpg"},
+    {"RoomId": 23, "RoomNumber": "503", "RoomTypeId": 5, "IsAvailable": true, "ImageURL": "/images/rooms/executive_suite_503.jpg"},
+    {"RoomId": 24, "RoomNumber": "504", "RoomTypeId": 5, "IsAvailable": false, "ImageURL": "/images/rooms/executive_suite_504.jpg"},
+    {"RoomId": 25, "RoomNumber": "505", "RoomTypeId": 5, "IsAvailable": true, "ImageURL": "/images/rooms/executive_suite_505.jpg"},
+    
+    {"RoomId": 26, "RoomNumber": "601", "RoomTypeId": 6, "IsAvailable": true, "ImageURL": "/images/rooms/family_room_601.jpg"},
+    {"RoomId": 27, "RoomNumber": "602", "RoomTypeId": 6, "IsAvailable": true, "ImageURL": "/images/rooms/family_room_602.jpg"},
+    {"RoomId": 28, "RoomNumber": "603", "RoomTypeId": 6, "IsAvailable": true, "ImageURL": "/images/rooms/family_room_603.jpg"},
+    {"RoomId": 29, "RoomNumber": "604", "RoomTypeId": 6, "IsAvailable": false, "ImageURL": "/images/rooms/family_room_604.jpg"},
+    {"RoomId": 30, "RoomNumber": "605", "RoomTypeId": 6, "IsAvailable": true, "ImageURL": "/images/rooms/family_room_605.jpg"},
+    
+    {"RoomId": 31, "RoomNumber": "701", "RoomTypeId": 7, "IsAvailable": true, "ImageURL": "/images/rooms/honeymoon_suite_701.jpg"},
+    {"RoomId": 32, "RoomNumber": "702", "RoomTypeId": 7, "IsAvailable": true, "ImageURL": "/images/rooms/honeymoon_suite_702.jpg"},
+    {"RoomId": 33, "RoomNumber": "703", "RoomTypeId": 7, "IsAvailable": true, "ImageURL": "/images/rooms/honeymoon_suite_703.jpg"},
+    {"RoomId": 34, "RoomNumber": "704", "RoomTypeId": 7, "IsAvailable": false, "ImageURL": "/images/rooms/honeymoon_suite_704.jpg"},
+    {"RoomId": 35, "RoomNumber": "705", "RoomTypeId": 7, "IsAvailable": true, "ImageURL": "/images/rooms/honeymoon_suite_705.jpg"},
+    
+    {"RoomId": 36, "RoomNumber": "801", "RoomTypeId": 8, "IsAvailable": true, "ImageURL": "/images/rooms/accessible_room_801.jpg"},
+    {"RoomId": 37, "RoomNumber": "802", "RoomTypeId": 8, "IsAvailable": true, "ImageURL": "/images/rooms/accessible_room_802.jpg"},
+    {"RoomId": 38, "RoomNumber": "803", "RoomTypeId": 8, "IsAvailable": true, "ImageURL": "/images/rooms/accessible_room_803.jpg"},
+    {"RoomId": 39, "RoomNumber": "804", "RoomTypeId": 8, "IsAvailable": false, "ImageURL": "/images/rooms/accessible_room_804.jpg"},
+    {"RoomId": 40, "RoomNumber": "805", "RoomTypeId": 8, "IsAvailable": true, "ImageURL": "/images/rooms/accessible_room_805.jpg"},
+    
+    {"RoomId": 41, "RoomNumber": "901", "RoomTypeId": 9, "IsAvailable": true, "ImageURL": "/images/rooms/penthouse_901.jpg"},
+    {"RoomId": 42, "RoomNumber": "902", "RoomTypeId": 9, "IsAvailable": true, "ImageURL": "/images/rooms/penthouse_902.jpg"},
+    {"RoomId": 43, "RoomNumber": "903", "RoomTypeId": 9, "IsAvailable": true, "ImageURL": "/images/rooms/penthouse_903.jpg"},
+    {"RoomId": 44, "RoomNumber": "904", "RoomTypeId": 9, "IsAvailable": false, "ImageURL": "/images/rooms/penthouse_904.jpg"},
+    {"RoomId": 45, "RoomNumber": "905", "RoomTypeId": 9, "IsAvailable": true, "ImageURL": "/images/rooms/penthouse_905.jpg"},
+    
+    {"RoomId": 46, "RoomNumber": "1001", "RoomTypeId": 10, "IsAvailable": true, "ImageURL": "/images/rooms/quad_room_1001.jpg"},
+    {"RoomId": 47, "RoomNumber": "1002", "RoomTypeId": 10, "IsAvailable": true, "ImageURL": "/images/rooms/quad_room_1002.jpg"},
+    {"RoomId": 48, "RoomNumber": "1003", "RoomTypeId": 10, "IsAvailable": true, "ImageURL": "/images/rooms/quad_room_1003.jpg"},
+    {"RoomId": 49, "RoomNumber": "1004", "RoomTypeId": 10, "IsAvailable": false, "ImageURL": "/images/rooms/quad_room_1004.jpg"},
+    {"RoomId": 50, "RoomNumber": "1005", "RoomTypeId": 10, "IsAvailable": true, "ImageURL": "/images/rooms/quad_room_1005.jpg"}
   ]
 }
